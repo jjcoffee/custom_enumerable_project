@@ -43,6 +43,13 @@ module Enumerable
       out.push(yield(item))
     end
   end
+
+  def my_none?
+    for item in self do
+      return false if yield(item)
+    end
+    true
+  end
 end
 
 # You will first have to define my_each
