@@ -26,6 +26,17 @@ module Enumerable
       i += 1
     end
   end
+
+  def my_inject(acc = nil)
+    for item in self do
+      unless acc
+        acc = item
+        next
+      end
+      acc = yield(acc, item)
+    end
+    acc
+  end
 end
 
 # You will first have to define my_each
