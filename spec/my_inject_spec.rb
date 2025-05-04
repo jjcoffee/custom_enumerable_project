@@ -24,5 +24,10 @@ RSpec.describe Enumerable do
       # calculates the sum of the elements of the enumerable array plus the initial value
       expect(enumerable.my_inject(initial_value) { |sum, value| sum + value }).to eq 188
     end
+
+    it 'uses the first element if no start value is given' do
+      # calculates the sum of the elements of the enumerable array plus the initial value
+      expect([3,4,5].my_inject { |sum, value| sum + value }).to eq 12
+    end
   end
 end
