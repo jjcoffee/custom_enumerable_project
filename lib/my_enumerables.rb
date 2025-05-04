@@ -18,6 +18,14 @@ module Enumerable
       block_given? && !yield(item) ? count : count + 1
     end
   end
+
+  def my_each_with_index
+    i = 0
+    for item in self do
+      yield(item, i)
+      i += 1
+    end
+  end
 end
 
 # You will first have to define my_each
