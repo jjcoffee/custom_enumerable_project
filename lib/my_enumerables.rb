@@ -37,6 +37,12 @@ module Enumerable
     end
     acc
   end
+
+  def my_map
+    self.reduce([]) do |out, item|
+      out.push(yield(item))
+    end
+  end
 end
 
 # You will first have to define my_each
