@@ -50,6 +50,12 @@ module Enumerable
     end
     true
   end
+
+  def my_select
+    self.reduce([]) do |out, item|
+      yield(item) ? out.push(item) : out
+    end
+  end
 end
 
 # You will first have to define my_each
