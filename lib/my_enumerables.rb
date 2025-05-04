@@ -12,6 +12,12 @@ module Enumerable
     end
     false
   end
+
+  def my_count
+    self.reduce(0) do |count, item|
+      block_given? && !yield(item) ? count : count + 1
+    end
+  end
 end
 
 # You will first have to define my_each
